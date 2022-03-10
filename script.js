@@ -107,8 +107,31 @@ const keyUp = function (e) {
 	}
 };
 
+const moveBall = function () {
+	ball.x += ball.dx;
+	ball.y += ball.dy;
+	//wall detection (left/right)
+	if (ball.x === 0 || ball.x + ball.size > canvas.width) {
+		ball.dx *= -1;
+	}
+	if (ball.y < 0 || ball.y + ball.size > canvas.height) {
+		ball.dy *= -1;
+	}
+	// paddle collision
+	if (
+		ball.y + ball.size >= paddle.y &&
+		ball.x >= paddle.x &&
+		ball.x + ball.size <= paddle.x + paddle.w
+	) {
+		ball.dy = -ball.speed;
+    }
+    // bricks collision
+\
+};
+
 const update = function () {
 	movePaddle();
+	moveBall();
 	//draw everything
 	draw();
 	requestAnimationFrame(update);
