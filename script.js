@@ -124,9 +124,23 @@ const moveBall = function () {
 		ball.x + ball.size <= paddle.x + paddle.w
 	) {
 		ball.dy = -ball.speed;
-    }
-    // bricks collision
-\
+	}
+	// bricks collision
+	bricks.forEach((row) => {
+		row.forEach((brick) => {
+			if (brick.visible) {
+				if (
+					ball.x - ball.size >= brick.x &&
+					ball.x + ball.size <= brick.x + brick.w &&
+					ball.y + ball.size > brick.y &&
+					ball.y - ball.size < brick.y + brick.h
+				) {
+					ball.dy *= -1;
+					brick.visible = false;
+				}
+			}
+		});
+	});
 };
 
 const update = function () {
