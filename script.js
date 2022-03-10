@@ -107,6 +107,21 @@ const keyUp = function (e) {
 	}
 };
 
+const showAllBricks = function () {
+	bricks.forEach((row) => {
+		row.forEach((brick) => {
+			brick.visible = true;
+		});
+	});
+};
+
+const increaseScore = function () {
+	score++;
+	if (score === bricksColumnCount * bricksRowCount) {
+		showAllBricks();
+	}
+};
+
 const moveBall = function () {
 	ball.x += ball.dx;
 	ball.y += ball.dy;
@@ -137,10 +152,16 @@ const moveBall = function () {
 				) {
 					ball.dy *= -1;
 					brick.visible = false;
+					increaseScore();
 				}
 			}
 		});
 	});
+	// if the ball touch the bottom wall
+	if (ball.y + ball.size >= canvas.height) {
+		score = 0;
+		showAllBricks();
+	}
 };
 
 const update = function () {
