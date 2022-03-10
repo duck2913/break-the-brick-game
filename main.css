@@ -1,0 +1,116 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+
+input {
+  line-height: normal;
+}
+
+label,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: inline-block;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+section[id] {
+  scroll-margin-top: 3rem;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #0095dd;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  border-radius: 1rem;
+}
+
+.btn--rules {
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+}
+
+.rules {
+  background-color: #555;
+  color: white;
+  left: 0;
+  height: 100%;
+  width: 30rem;
+  position: absolute;
+  padding: 3rem 1rem;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.rules > * {
+  margin-top: 1rem;
+}
+
+.rules.show {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+canvas {
+  display: block;
+  background-color: white;
+  margin-top: 1rem;
+}
+/*# sourceMappingURL=main.css.map */
